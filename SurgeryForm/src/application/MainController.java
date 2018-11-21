@@ -204,22 +204,85 @@ public class MainController {
 		date1.setValue(null);
 		date2.setValue(null);
 	}
+	
+	public boolean isFill(){
+		return !(this.txt1.getText().equals("")) && 
+			   !(this.txt2.getText().equals("")) &&
+			   !(this.txt4.getText().equals("")) &&
+			   !(this.txt6.getText().equals("")) &&
+			   !(this.txt7.getText().equals("")) &&
+			   !(this.txt8.getText().equals("")) &&
+			   !(this.txt9.getText().equals("")) &&
+			   !(this.txt10.getText().equals("")) &&
+			   !(this.txt12.getText().equals("")) &&
+			   !(this.txt13.getText().equals("")) &&
+			   !(this.txt14.getText().equals("")) &&
+			   !(this.txt15.getText().equals("")) &&
+			   !(this.txt16.getText().equals("")) &&
+			   !(this.txt18.getText().equals("")) &&
+			   !(this.txt25.getText().equals("")) &&
+			   !(this.txt29.getText().equals("")) &&
+			   !(this.txt30.getText().equals("")) &&
+			   !(this.txt31.getText().equals("")) &&
+			   !(this.txt33.getText().equals("")) &&
+			   !(this.txt34.getText().equals("")) &&
+			   !(this.txt35.getText().equals("")) &&
+			   !(this.txt36.getText().equals("")) &&
+			   !(this.txt38.getText().equals("")) &&
+			   !(this.txt40.getText().equals("")) &&
+			   !(this.txt41.getText().equals("")) &&
+			   !(this.txt42.getText().equals("")) &&
+			   !(this.txt43.getText().equals("")) &&
+			   !(this.txt44.getText().equals("")) &&
+			   !(this.txt45.getText().equals("")) &&
+			   !(this.txt46.getText().equals("")) &&
+			   !(this.txt47.getText().equals("")) &&
+			   !(this.txt48.getText().equals("")) &&
+			   ((this.anes1.isSelected()) || this.anes2.isSelected() || this.anes3.isSelected()) &&
+			   (this.male.isSelected() || this.female.isSelected()) &&
+			   !(this.date1.getValue()==null) &&
+			   !(this.date2.getValue()==null);
+	}
+
 
 	public void submitSurgeryForm(ActionEvent ev) {
+		if (!isFill()){
+			//System.out.println("You have to fill it.");
+			//System.exit(0);
+			Stage window = new Stage();
+
+			window.initModality(Modality.APPLICATION_MODAL);
+			window.setTitle("Surgery Form Error");
+			window.setMinWidth(250);
+			Label confirmLabel = new Label();
+			confirmLabel.setText("You have to fill all the data");
+			Button closeButton=new Button("Return");
+			closeButton.setOnAction(e->window.close());
+			VBox layout =new VBox(10);
+			layout.getChildren().addAll(confirmLabel,closeButton);
+			layout.setAlignment(Pos.CENTER);
+			Scene scene = new Scene(layout);
+			window.setScene(scene);
+			window.showAndWait();
+		}
+		else {
 		Stage window = new Stage();
+
 		window.initModality(Modality.APPLICATION_MODAL);
 		window.setTitle("Surgery Form confirm");
 		window.setMinWidth(250);
 		Label confirmLabel = new Label();
 		confirmLabel.setText("Surgery form succesfully created!!!");
-		Button closeButton = new Button("Exit");
-		closeButton.setOnAction(e -> window.close());
-		VBox layout = new VBox(10);
-		layout.getChildren().addAll(confirmLabel, closeButton);
+		Button closeButton=new Button("Exit");
+		closeButton.setOnAction(e->window.close());
+		VBox layout =new VBox(10);
+		layout.getChildren().addAll(confirmLabel,closeButton);
 		layout.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(layout);
 		window.setScene(scene);
 		window.showAndWait();
+		}
+
 	}
 
 }
