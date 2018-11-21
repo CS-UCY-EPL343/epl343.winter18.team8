@@ -156,7 +156,7 @@
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton fx:id="female" layoutX="198.0" layoutY="248.0" mnemonicParsing="false" text="Female" toggleGroup="$myGroup" />
-                  <Button fx:id="backToCalendar" layoutX="273.0" layoutY="468.0" mnemonicParsing="false" onAction="#loadCalendar" prefHeight="45.0" prefWidth="107.0" text="Back To Calendar" />
+                  <Button fx:id="backToCalendar" layoutX="261.0" layoutY="468.0" mnemonicParsing="false" onAction="#loadCalendar" prefHeight="45.0" prefWidth="122.0" text="Back To Calendar" />
                </children>
             </AnchorPane>
         </content>

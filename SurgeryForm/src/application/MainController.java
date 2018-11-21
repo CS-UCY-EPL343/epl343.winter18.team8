@@ -1,27 +1,24 @@
 package application;
 
 import java.io.IOException;
-import java.util.Random;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainController {
+
 	@FXML
 	private Button reset;
 	@FXML
@@ -138,12 +135,15 @@ public class MainController {
 	private Button submitSurgery;
 	@FXML
 	private Button backToCalendar;
-	@FXML
-	private AnchorPane rootPane;
 
-	public void loadCalendar(ActionEvent ev) throws IOException{
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/application/Calendar.fxml"));
-		rootPane.getChildren().setAll(pane);
+	@FXML
+	private void loadCalendar(ActionEvent ev) throws IOException {
+		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Calendar.fxml"));
+		Scene tableViewScene = new Scene(tableviewParent, 400, 400);
+		tableViewScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
+		window.setScene(tableViewScene);
+		window.show();
 	}
 
 	public void resetText(ActionEvent ev) {
@@ -212,10 +212,10 @@ public class MainController {
 		window.setMinWidth(250);
 		Label confirmLabel = new Label();
 		confirmLabel.setText("Surgery form succesfully created!!!");
-		Button closeButton=new Button("Exit");
-		closeButton.setOnAction(e->window.close());
-		VBox layout =new VBox(10);
-		layout.getChildren().addAll(confirmLabel,closeButton);
+		Button closeButton = new Button("Exit");
+		closeButton.setOnAction(e -> window.close());
+		VBox layout = new VBox(10);
+		layout.getChildren().addAll(confirmLabel, closeButton);
 		layout.setAlignment(Pos.CENTER);
 		Scene scene = new Scene(layout);
 		window.setScene(scene);
