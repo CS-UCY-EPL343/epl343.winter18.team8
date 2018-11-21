@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="688.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+  <tabs>
+    <Tab text="Standard Input">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="55.0" text="CXR *" />
+                  <TextArea fx:id="txt1" layoutX="34.0" layoutY="78.0" prefHeight="29.0" prefWidth="68.0" />
+                  <Label layoutX="33.0" layoutY="21.0" text="I have arranged / I will arrange the following tests to be carried out at AMC:" />
+                  <Label layoutX="33.0" layoutY="124.0" text="EKG *" />
+                  <Label layoutX="33.0" layoutY="227.0" text="PRBC *" />
+                  <Label layoutX="31.0" layoutY="195.0" text="Blood Products. I ordered/ will order:" />
+                  <Label layoutX="164.0" layoutY="227.0" text="PLT *" />
+                  <Label layoutX="277.0" layoutY="227.0" text="FFP *" />
+                  <Label layoutX="167.0" layoutY="55.0" text="Lab *" />
+                  <Label layoutX="167.0" layoutY="124.0" text="Other" />
+                  <Label layoutX="298.0" layoutY="55.0" text="Biopsy" />
+                  <Label layoutX="32.0" layoutY="306.0" text="Skin Preparation:" />
+                  <Label layoutX="33.0" layoutY="411.0" text="Recovery Room *" />
+                  <Label layoutX="388.0" layoutY="227.0" text="Cryoprecipitate *" />
+                  <TextArea fx:id="txt2" layoutX="161.0" layoutY="78.0" prefHeight="29.0" prefWidth="72.0" />
+                  <TextArea fx:id="txt7" layoutX="157.0" layoutY="250.0" prefHeight="29.0" prefWidth="83.0" />
+                  <TextArea fx:id="txt4" layoutX="33.0" layoutY="149.0" prefHeight="29.0" prefWidth="84.0" />
+                  <TextArea fx:id="txt16" layoutX="407.0" layoutY="528.0" prefHeight="29.0" prefWidth="107.0" />
+                  <TextArea fx:id="txt13" layoutX="160.0" layoutY="449.0" prefHeight="29.0" prefWidth="90.0" />
+                  <TextArea fx:id="txt5" layoutX="158.0" layoutY="149.0" prefHeight="29.0" prefWidth="78.0" />
+                  <TextArea fx:id="txt10" layoutX="31.0" layoutY="364.0" prefHeight="29.0" prefWidth="78.0" />
+                  <TextArea fx:id="txt15" layoutX="186.0" layoutY="528.0" prefHeight="29.0" prefWidth="95.0" />
+                  <TextArea fx:id="txt12" layoutX="29.0" layoutY="449.0" prefHeight="29.0" prefWidth="78.0" />
+                  <TextArea fx:id="txt6" layoutX="31.0" layoutY="250.0" prefHeight="29.0" prefWidth="88.0" />
+                  <TextArea fx:id="txt11" layoutX="160.0" layoutY="364.0" prefHeight="29.0" prefWidth="90.0" />
+                  <TextArea fx:id="txt14" layoutX="29.0" layoutY="528.0" prefHeight="29.0" prefWidth="82.0" />
+                  <TextArea fx:id="txt9" layoutX="388.0" layoutY="250.0" prefHeight="29.0" prefWidth="72.0" />
+                  <TextArea fx:id="txt8" layoutX="276.0" layoutY="250.0" prefHeight="29.0" prefWidth="78.0" />
+                  <TextArea fx:id="txt3" layoutX="296.0" layoutY="78.0" prefHeight="29.0" prefWidth="79.0" />
+                  <Label layoutX="167.0" layoutY="335.0" text="Shave" />
+                  <Label layoutX="33.0" layoutY="335.0" text="Disinfoctant *" />
+                  <Label layoutX="410.0" layoutY="494.0" text="Expected Total Length of Stay(Days) *" />
+                  <Label layoutX="185.0" layoutY="494.0" text="Expected Days in Ward with Telemetry *" />
+                  <Label layoutX="34.0" layoutY="494.0" text="Expected Days in ICU *" />
+                  <Label layoutX="156.0" layoutY="409.0" prefHeight="39.0" prefWidth="168.0" text="Alternative contact for urgent&#10;clinical attendance *" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Details">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="30.0" layoutY="28.0" text="Special Consumables &amp; implants to be purchased by AMC:" />
+                  <TextArea fx:id="txt18" layoutX="30.0" layoutY="132.0" prefHeight="26.0" prefWidth="132.0" />
+                  <Label layoutX="30.0" layoutY="101.0" text="Expected Time of Admission *" />
+                  <Label layoutX="211.0" layoutY="101.0" text="Patient's Room Preferences" />
+                  <TextArea fx:id="txt19" layoutX="211.0" layoutY="132.0" prefHeight="26.0" prefWidth="132.0" />
+                  <TextArea fx:id="txt17" layoutX="30.0" layoutY="58.0" prefHeight="26.0" prefWidth="318.0" />
+                  <Label layoutX="30.0" layoutY="189.0" text="Doctor's Notes to Nursing &amp; Admistration Staff" />
+                  <Label layoutX="320.0" layoutY="189.0" text="Anesthesiologist's Notes to Theater Nursing Staff" />
+                  <TextArea fx:id="txt20" layoutX="30.0" layoutY="223.0" prefHeight="74.0" prefWidth="250.0" />
+                  <TextArea fx:id="txt21" layoutX="320.0" layoutY="223.0" prefHeight="74.0" prefWidth="259.0" />
+                  <TextArea fx:id="txt22" layoutX="30.0" layoutY="355.0" prefHeight="74.0" prefWidth="250.0" />
+                  <TextArea fx:id="txt23" layoutX="325.0" layoutY="355.0" prefHeight="74.0" prefWidth="250.0" />
+                  <TextArea fx:id="txt24" layoutX="30.0" layoutY="479.0" prefHeight="74.0" prefWidth="250.0" />
+                  <Label layoutX="32.0" layoutY="446.0" text="Estimate cost of Surgery" />
+                  <Label layoutX="31.0" layoutY="322.0" text="Details" />
+                  <Label layoutX="331.0" layoutY="322.0" text="Important Information" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Doctor's Information">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="32.0" text="Doctor &amp; Speciality *" />
+                  <Label layoutX="424.0" layoutY="32.0" text="Assistant Doctor(s)" />
+                  <Label layoutX="189.0" layoutY="32.0" text="Anesthesiologist *" />
+                  <TextArea fx:id="txt25" layoutX="27.0" layoutY="62.0" prefHeight="28.0" prefWidth="110.0" />
+                  <TextArea fx:id="txt26" layoutX="424.0" layoutY="63.0" prefHeight="28.0" prefWidth="110.0" />
+                  <Label layoutX="27.0" layoutY="113.0" text="Date of Case *" />
+                  <TextArea fx:id="txt27" layoutX="424.0" layoutY="108.0" prefHeight="28.0" prefWidth="110.0" />
+                  <TextArea fx:id="txt28" layoutX="424.0" layoutY="161.0" prefHeight="28.0" prefWidth="110.0" />
+                  <DatePicker fx:id="date1" layoutX="27.0" layoutY="140.0" prefHeight="25.0" prefWidth="111.0" />
+                  <Label layoutX="27.0" layoutY="189.0" text="Planned Case *" />
+                  <TextArea fx:id="txt29" layoutX="27.0" layoutY="212.0" prefHeight="28.0" prefWidth="110.0" />
+                  <Label layoutX="27.0" layoutY="254.0" text="Anesthesia Planned *" />
+                  <TextArea fx:id="txt30" layoutX="28.0" layoutY="277.0" prefHeight="28.0" prefWidth="110.0" />
+                  <Label layoutX="194.0" layoutY="237.0" text="Booking Duration(in hours) :&#10;Time Patient in Theater *" />
+                  <Label layoutX="423.0" layoutY="254.0" text="Time of Surgery" />
+                  <TextArea fx:id="txt31" layoutX="194.0" layoutY="277.0" prefHeight="28.0" prefWidth="110.0" />
+                  <TextArea fx:id="txt32" layoutX="424.0" layoutY="277.0" prefHeight="28.0" prefWidth="110.0" />
+                  <Label layoutX="26.0" layoutY="330.0" text="HOSPITAL *" />
+                  <Label layoutX="194.0" layoutY="313.0" text="Expected Surgery Duration (in hours) : &#10;Incision to Closing *" />
+                  <Label layoutX="426.0" layoutY="328.0" text="Theaters *" />
+                  <TextArea fx:id="txt34" layoutX="194.0" layoutY="353.0" prefHeight="29.0" prefWidth="114.0" />
+                  <TextArea fx:id="txt33" layoutX="27.0" layoutY="353.0" prefHeight="28.0" prefWidth="110.0" />
+                  <TextArea fx:id="txt35" layoutX="424.0" layoutY="351.0" prefHeight="28.0" prefWidth="110.0" />
+                  <RadioButton fx:id="anes1" layoutX="194.0" layoutY="69.0" mnemonicParsing="false" text="I do not need an Anesthesiologist">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="myGroupB" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="anes2" layoutX="194.0" layoutY="105.0" mnemonicParsing="false" text="I prearranged" toggleGroup="$myGroupB" />
+                  <RadioButton fx:id="anes3" layoutX="194.0" layoutY="144.0" mnemonicParsing="false" text="To arrange an Anesthesiologist" toggleGroup="$myGroupB" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Patient's Information">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="50.0" layoutY="37.0" text="First Name *" />
+                  <Label layoutX="352.0" layoutY="37.0" text="Last Name *" />
+                  <Label layoutX="199.0" layoutY="37.0" text="Middle Name" />
+                  <Label layoutX="353.0" layoutY="119.0" text="Date of Birth *" />
+                  <Label layoutX="199.0" layoutY="119.0" text="Contact Phone *" />
+                  <Label layoutX="50.0" layoutY="119.0" text="Patient Number" />
+                  <Label layoutX="353.0" layoutY="196.0" text="Next of Kin Name &amp; Phone *" />
+                  <Label layoutX="199.0" layoutY="196.0" text="Gender *" />
+                  <Label layoutX="50.0" layoutY="196.0" text="Police ID/Passport *" />
+                  <Label layoutX="50.0" layoutY="280.0" text="Patient's Insurance *" />
+                  <Label layoutX="51.0" layoutY="351.0" text="Scrub Nurse(s) *" />
+                  <Label layoutX="201.0" layoutY="351.0" text="Circulator(s) *" />
+                  <Label layoutX="352.0" layoutY="351.0" text="Instrum. of Limited Availability *" />
+                  <TextArea fx:id="txt43" layoutX="50.0" layoutY="305.0" prefHeight="27.0" prefWidth="83.0" />
+                  <TextArea fx:id="txt42" layoutX="353.0" layoutY="216.0" prefHeight="27.0" prefWidth="129.0" />
+                  <TextArea fx:id="txt41" layoutX="49.0" layoutY="216.0" prefHeight="27.0" prefWidth="105.0" />
+                  <TextArea fx:id="txt40" layoutX="197.0" layoutY="152.0" prefHeight="27.0" prefWidth="112.0" />
+                  <TextArea fx:id="txt38" layoutX="355.0" layoutY="66.0" prefHeight="27.0" prefWidth="120.0" />
+                  <TextArea fx:id="txt39" layoutX="50.0" layoutY="152.0" prefHeight="27.0" prefWidth="102.0" />
+                  <TextArea fx:id="txt37" layoutX="199.0" layoutY="66.0" prefHeight="27.0" prefWidth="108.0" />
+                  <TextArea fx:id="txt36" layoutX="48.0" layoutY="66.0" prefHeight="27.0" prefWidth="101.0" />
+                  <DatePicker fx:id="date2" layoutX="348.0" layoutY="153.0" prefHeight="25.0" prefWidth="99.0" />
+                  <TextArea fx:id="txt48" layoutX="350.0" layoutY="371.0" prefHeight="27.0" prefWidth="83.0" />
+                  <TextArea fx:id="txt44" layoutX="201.0" layoutY="304.0" prefHeight="27.0" prefWidth="83.0" />
+                  <TextArea fx:id="txt47" layoutX="200.0" layoutY="374.0" prefHeight="27.0" prefWidth="83.0" />
+                  <Label layoutX="201.0" layoutY="279.0" text="Diagnosis *" />
+                  <TextArea fx:id="txt46" layoutX="50.0" layoutY="374.0" prefHeight="27.0" prefWidth="83.0" />
+                  <Label layoutX="351.0" layoutY="279.0" text="Comorbiditles *" />
+                  <TextArea fx:id="txt45" layoutX="350.0" layoutY="304.0" prefHeight="27.0" prefWidth="83.0" />
+                  <Button fx:id="reset" layoutX="521.0" layoutY="467.0" mnemonicParsing="false" onAction="#resetText" prefHeight="47.0" prefWidth="75.0" text="Reset" />
+                  <Button fx:id="submitSurgery" layoutX="394.0" layoutY="468.0" mnemonicParsing="false" onAction="#submitSurgeryForm" prefHeight="45.0" prefWidth="107.0" text="Submit Surgery" />
+                  <ImageView fitHeight="140.0" fitWidth="167.0" layoutX="50.0" layoutY="420.0">
+                     <image>
+                        <Image url="@../../../../Desktop/5o%20examino/EPL343-TexLog/Project-program/46525323_336286520257040_7862031686521847808_n.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="male" layoutX="199.0" layoutY="221.0" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="myGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="female" layoutX="198.0" layoutY="248.0" mnemonicParsing="false" text="Female" toggleGroup="$myGroup" />
+                  <AnchorPane layoutX="228.0" layoutY="468.0" prefHeight="50.0" prefWidth="159.0">
+                     <children>
+                        <Button fx:id="loadCalendar" layoutX="26.0" layoutY="3.0" mnemonicParsing="false" onAction="#loadCalendar" prefHeight="45.0" prefWidth="107.0" text="Back To Calendar" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
