@@ -138,8 +138,8 @@ public class MainController {
 
 	@FXML
 	private void loadCalendar(ActionEvent ev) throws IOException {
-		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Calendar.fxml"));
-		Scene tableViewScene = new Scene(tableviewParent, 400, 400);
+		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+		Scene tableViewScene = new Scene(tableviewParent, 1080, 600);
 		tableViewScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
 		window.setScene(tableViewScene);
@@ -204,9 +204,9 @@ public class MainController {
 		date1.setValue(null);
 		date2.setValue(null);
 	}
-	
+
 	public boolean isFill(){
-		return !(this.txt1.getText().equals("")) && 
+		return !(this.txt1.getText().equals("")) &&
 			   !(this.txt2.getText().equals("")) &&
 			   !(this.txt4.getText().equals("")) &&
 			   !(this.txt6.getText().equals("")) &&
