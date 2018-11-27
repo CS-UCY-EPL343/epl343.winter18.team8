@@ -27,7 +27,7 @@ public class LoginController {
 		if (txtusername.getText().equals("user") && txtpassword.getText().equals("pass")) {
 			lblstatus.setText("Login Success");
 			Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
-			Scene tableViewScene = new Scene(tableviewParent, 1080, 600);
+			Scene tableViewScene = new Scene(tableviewParent, 1064, 602);
 			tableViewScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
 			window.setScene(tableViewScene);

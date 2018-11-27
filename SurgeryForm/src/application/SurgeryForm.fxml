@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -85,7 +86,7 @@
                   <Label layoutX="27.0" layoutY="113.0" text="Date of Case *" />
                   <TextArea fx:id="txt27" layoutX="424.0" layoutY="108.0" prefHeight="28.0" prefWidth="110.0" />
                   <TextArea fx:id="txt28" layoutX="424.0" layoutY="161.0" prefHeight="28.0" prefWidth="110.0" />
-                  <DatePicker fx:id="date1" layoutX="27.0" layoutY="140.0" prefHeight="25.0" prefWidth="111.0" />
+                  <DatePicker fx:id="doS" layoutX="27.0" layoutY="140.0" prefHeight="25.0" prefWidth="111.0" />
                   <Label layoutX="27.0" layoutY="189.0" text="Planned Case *" />
                   <TextArea fx:id="txt29" layoutX="27.0" layoutY="212.0" prefHeight="28.0" prefWidth="110.0" />
                   <Label layoutX="27.0" layoutY="254.0" text="Anesthesia Planned *" />
@@ -93,7 +94,7 @@
                   <Label layoutX="194.0" layoutY="237.0" text="Booking Duration(in hours) :&#10;Time Patient in Theater *" />
                   <Label layoutX="423.0" layoutY="254.0" text="Time of Surgery" />
                   <TextArea fx:id="txt31" layoutX="194.0" layoutY="277.0" prefHeight="28.0" prefWidth="110.0" />
-                  <TextArea fx:id="txt32" layoutX="424.0" layoutY="277.0" prefHeight="28.0" prefWidth="110.0" />
+                  <TextArea fx:id="txt32" layoutX="424.0" layoutY="277.0" prefHeight="28.0" prefWidth="42.0" />
                   <Label layoutX="26.0" layoutY="330.0" text="HOSPITAL *" />
                   <Label layoutX="194.0" layoutY="313.0" text="Expected Surgery Duration (in hours) : &#10;Incision to Closing *" />
                   <Label layoutX="426.0" layoutY="328.0" text="Theaters *" />
@@ -107,6 +108,12 @@
                   </RadioButton>
                   <RadioButton fx:id="anes2" layoutX="194.0" layoutY="105.0" mnemonicParsing="false" text="I prearranged" toggleGroup="$myGroupB" />
                   <RadioButton fx:id="anes3" layoutX="194.0" layoutY="144.0" mnemonicParsing="false" text="To arrange an Anesthesiologist" toggleGroup="$myGroupB" />
+                  <TextArea fx:id="txt49" layoutX="492.0" layoutY="277.0" prefHeight="28.0" prefWidth="42.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="466.0" layoutY="276.0" prefHeight="30.0" prefWidth="26.0" text=":">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
         </content>
       </Tab>
@@ -135,7 +142,7 @@
                   <TextArea fx:id="txt39" layoutX="50.0" layoutY="152.0" prefHeight="27.0" prefWidth="102.0" />
                   <TextArea fx:id="txt37" layoutX="199.0" layoutY="66.0" prefHeight="27.0" prefWidth="108.0" />
                   <TextArea fx:id="txt36" layoutX="48.0" layoutY="66.0" prefHeight="27.0" prefWidth="101.0" />
-                  <DatePicker fx:id="date2" layoutX="348.0" layoutY="153.0" prefHeight="25.0" prefWidth="99.0" />
+                  <DatePicker fx:id="doB" layoutX="348.0" layoutY="153.0" prefHeight="25.0" prefWidth="99.0" />
                   <TextArea fx:id="txt48" layoutX="350.0" layoutY="371.0" prefHeight="27.0" prefWidth="83.0" />
                   <TextArea fx:id="txt44" layoutX="201.0" layoutY="304.0" prefHeight="27.0" prefWidth="83.0" />
                   <TextArea fx:id="txt47" layoutX="200.0" layoutY="374.0" prefHeight="27.0" prefWidth="83.0" />

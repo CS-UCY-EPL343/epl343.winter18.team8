@@ -12,14 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.util.*;
 
-public class CalendarController {
-
+public class CalendarController{
 	@FXML
 	private ResourceBundle resources;
 
@@ -27,15 +25,375 @@ public class CalendarController {
 	private URL location;
 
 	@FXML
-	private TextArea date1;
+	protected Text date1;
 	@FXML
-	private TextArea date2;
+	protected Text date2;
+	@FXML
+	protected TextField Monday0;
+	@FXML
+	protected TextField Monday3;
+	@FXML
+	protected TextField Monday6;
+	@FXML
+	protected TextField Monday9;
+	@FXML
+	protected TextField Monday12;
+	@FXML
+	protected TextField Monday15;
+	@FXML
+	protected TextField Monday18;
+	@FXML
+	protected TextField Monday21;
+	@FXML
+	protected TextField Tuesday0;
+	@FXML
+	protected TextField Tuesday3;
+	@FXML
+	protected TextField Tuesday6;
+	@FXML
+	protected TextField Tuesday9;
+	@FXML
+	protected TextField Tuesday12;
+	@FXML
+	protected TextField Tuesday15;
+	@FXML
+	protected TextField Tuesday18;
+	@FXML
+	protected TextField Tuesday21;
+	@FXML
+	protected TextField Wednesday0;
+	@FXML
+	protected TextField Wednesday3;
+	@FXML
+	protected TextField Wednesday6;
+	@FXML
+	protected TextField Wednesday9;
+	@FXML
+	protected TextField Wednesday12;
+	@FXML
+	protected TextField Wednesday15;
+	@FXML
+	protected TextField Wednesday18;
+	@FXML
+	protected TextField Wednesday21;
+	@FXML
+	protected TextField Thursday0;
+	@FXML
+	protected TextField Thursday3;
+	@FXML
+	protected TextField Thursday6;
+	@FXML
+	protected TextField Thursday9;
+	@FXML
+	protected TextField Thursday12;
+	@FXML
+	protected TextField Thursday15;
+	@FXML
+	protected TextField Thursday18;
+	@FXML
+	protected TextField Thursday21;
+	@FXML
+	protected TextField Friday0;
+	@FXML
+	protected TextField Friday3;
+	@FXML
+	protected TextField Friday6;
+	@FXML
+	protected TextField Friday9;
+	@FXML
+	protected TextField Friday12;
+	@FXML
+	protected TextField Friday15;
+	@FXML
+	protected TextField Friday18;
+	@FXML
+	protected TextField Friday21;
+	@FXML
+	protected TextField Saturday0;
+	@FXML
+	protected TextField Saturday3;
+	@FXML
+	protected TextField Saturday6;
+	@FXML
+	protected TextField Saturday9;
+	@FXML
+	protected TextField Saturday12;
+	@FXML
+	protected TextField Saturday15;
+	@FXML
+	protected TextField Saturday18;
+	@FXML
+	protected TextField Saturday21;
+	@FXML
+	protected TextField Sunday0;
+	@FXML
+	protected TextField Sunday3;
+	@FXML
+	protected TextField Sunday6;
+	@FXML
+	protected TextField Sunday9;
+	@FXML
+	protected TextField Sunday12;
+	@FXML
+	protected TextField Sunday15;
+	@FXML
+	protected TextField Sunday18;
+	@FXML
+	protected TextField Sunday21;
 
-	long date_in_milis = System.currentTimeMillis();
-	long date_in_milis_2 = System.currentTimeMillis();
+	public static ArrayList <Surgery> surgeries = new ArrayList<Surgery>();
+	long date_in_milis = (new Date()).getTime();
+	long date_in_milis_2 = (new Date()).getTime();
+	
+	
+	public static void addToSurgeriesArray(Surgery s) {
+		surgeries.add(s);
+	}
+	public ArrayList<Surgery> getSurgeries() {
+		return surgeries;
+	}
+
+	public void setSurgeries(ArrayList<Surgery> surgeries) {
+		this.surgeries = surgeries;
+	}
 
 	@FXML
-	void initialize() throws java.text.ParseException {
+	void everclear(){
+		Monday0.setText("");
+		Monday3.setText("");
+		Monday6.setText("");
+		Monday9.setText("");
+		Monday12.setText("");
+		Monday15.setText("");
+		Monday18.setText("");
+		Monday21.setText("");
+		Tuesday0.setText("");
+		Tuesday3.setText("");
+		Tuesday6.setText("");
+		Tuesday9.setText("");
+		Tuesday12.setText("");
+		Tuesday15.setText("");
+		Tuesday18.setText("");
+		Tuesday21.setText("");
+		Wednesday0.setText("");
+		Wednesday3.setText("");
+		Wednesday6.setText("");
+		Wednesday9.setText("");
+		Wednesday12.setText("");
+		Wednesday15.setText("");
+		Wednesday18.setText("");
+		Wednesday21.setText("");
+		Thursday0.setText("");
+		Thursday3.setText("");
+		Thursday6.setText("");
+		Thursday9.setText("");
+		Thursday12.setText("");
+		Thursday15.setText("");
+		Thursday18.setText("");
+		Thursday21.setText("");
+		Friday0.setText("");
+		Friday3.setText("");
+		Friday6.setText("");
+		Friday9.setText("");
+		Friday12.setText("");
+		Friday15.setText("");
+		Friday18.setText("");
+		Friday21.setText("");	
+	}
+	
+	@SuppressWarnings("deprecation")
+	@FXML
+	void AddSurgeries(){
+			everclear();
+			for(int i=0;i<surgeries.size();i++){
+				Surgery s = surgeries.get(i);
+				if( (s.getDateOfSurgery().compareTo(new Date(date_in_milis)) >= 0) && (s.getDateOfSurgery().compareTo(new Date(date_in_milis_2)) <= 0)){
+					//ara ine mesa sto range ara prepei na tin emfanisoume mesa sto calendar
+					long time=	(s.getDateOfSurgery().getTime()+2L*60L*60L*1000L)%(1000L*24L*60L*60L);
+					switch (s.getDateOfSurgery().getDay()){
+					case 1 :if(time<(3*3600000)){
+								Monday0.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(6*3600000)){
+								Monday3.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(9*3600000)){
+								Monday6.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(12*3600000)){
+								Monday9.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(15*3600000)){
+								Monday12.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(18*3600000)){
+								Monday15.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(21*3600000)){
+								Monday18.setText(surgeries.get(i).getName());	
+							}
+							else if(time<(24*3600000)){
+								Monday21.setText(surgeries.get(i).getName());	
+							}break;
+					case 2 :if(time<(3*3600000)){
+						Tuesday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Tuesday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Tuesday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Tuesday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Tuesday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Tuesday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Tuesday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Tuesday21.setText(surgeries.get(i).getName());	
+					}break;
+					
+					case 3 :if(time<(3*3600000)){
+						Wednesday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Wednesday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Wednesday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Wednesday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Wednesday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Wednesday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Wednesday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Wednesday21.setText(surgeries.get(i).getName());	
+					}break;
+					
+					case 4 :if(time<(3*3600000)){
+						Thursday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Thursday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Thursday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Thursday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Thursday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Thursday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Thursday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Thursday21.setText(surgeries.get(i).getName());	
+					}break;
+					
+					case 5 :if(time<(3*3600000)){
+						Friday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Friday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Friday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Friday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Friday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Friday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Friday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Friday21.setText(surgeries.get(i).getName());	
+					}break;
+					
+					case 6 :if(time<(3*3600000)){
+						Saturday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Saturday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Saturday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Saturday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Saturday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Saturday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Saturday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Saturday21.setText(surgeries.get(i).getName());	
+					}break;
+					
+					case 7 :if(time<(3*3600000)){
+						Sunday0.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(6*3600000)){
+						Sunday3.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(9*3600000)){
+						Sunday6.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(12*3600000)){
+						Sunday9.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(15*3600000)){
+						Sunday12.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(18*3600000)){
+						Sunday15.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(21*3600000)){
+						Sunday18.setText(surgeries.get(i).getName());	
+					}
+					else if(time<(24*3600000)){
+						Sunday21.setText(surgeries.get(i).getName());	
+					}break;		
+					
+					}
+					}
+
+				}
+	}
+	
+	@SuppressWarnings("deprecation")
+	@FXML
+	public void initialize() {
 		assert date1 != null : "fx:id=\"date1\" was not injected: check your FXML file 'Main.fxml'.";
 		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
 		Date date = new Date(date_in_milis);
@@ -48,14 +406,35 @@ public class CalendarController {
 			}
 			date_in_milis = date_in_milis - 1000L * 24L * 60L * 60L;
 		}
-		StringTokenizer st = new StringTokenizer(date.toGMTString(), " ");
+		date_in_milis= date_in_milis - (date_in_milis%(1000L*24L*60L*60L)+2L*60L*60L*1000L);
+		StringTokenizer st = new StringTokenizer(date.toString(), " ");
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
-		date_in_milis_2 = date_in_milis + 6L * 1000L * 24L * 60L * 60L;
+		date_in_milis_2 = date_in_milis + 7L * 1000L * 24L * 60L * 60L-1L;
 		date = new Date(date_in_milis_2);
-		StringTokenizer st2 = new StringTokenizer(date.toGMTString(), " ");
+		StringTokenizer st2 = new StringTokenizer(date.toString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
+		/*Date date1 = new Date(2018-1900,10,23,21,42);
+		String[] strn= new String[49];
+		strn[35]="Kot";
+		boolean b[] = {true,true,false,true,true};
+		
+		Surgery surgery = new Surgery(strn,date1,date1,b);
+		Date date2 = new Date(2018-1900 , 10 , 19 , 23 , 15);
+		Surgery surgery2 = new Surgery(strn,date1,date2,b);
+		Surgery surgery3 = new Surgery(strn,date1,date2,b);
+		Surgery surgery4 = new Surgery(strn,new Date(2018-1900 , 10 , 27 , 23, 15),date2,b);
+		Surgery surgery5 = new Surgery(strn,new Date(2019-1900 , 1 , 1 , 3, 0),date1,b);//eshei problem me +1 -1 ores, dld otan allazei i wra se sigkegkrimenes epoxes
+		Surgery surgery6 = new Surgery(strn,new Date(2018-1900 , 9 , 25 , 0, 1),date2,b);
+		surgeries.add(surgery);
+		surgeries.add(surgery2);
+		surgeries.add(surgery3);
+		surgeries.add(surgery4);
+		surgeries.add(surgery5);
+		surgeries.add(surgery6);*/
+		AddSurgeries();
 	}
-
+	@SuppressWarnings("deprecation")
+	@FXML
 	public void PreviousWeekB(ActionEvent event) {
 		date_in_milis = date_in_milis - 7L * 1000L * 24L * 60L * 60L;
 		Date date = new Date(date_in_milis);
@@ -66,20 +445,20 @@ public class CalendarController {
 		date = new Date(date_in_milis_2);
 		StringTokenizer st2 = new StringTokenizer(date.toGMTString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
-
+		AddSurgeries();
 	}
-
+	@FXML
 	public void NextWeekB(ActionEvent event) {
 		date_in_milis = date_in_milis + 7L * 1000L * 24L * 60L * 60L;
 		Date date = new Date(date_in_milis);
 		String str = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
-		StringTokenizer st = new StringTokenizer(date.toGMTString(), " ");
+		StringTokenizer st = new StringTokenizer(date.toString(), " ");
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
 		date_in_milis_2 = date_in_milis + 6L * 1000L * 24L * 60L * 60L;
 		date = new Date(date_in_milis_2);
-		StringTokenizer st2 = new StringTokenizer(date.toGMTString(), " ");
+		StringTokenizer st2 = new StringTokenizer(date.toString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
-
+		AddSurgeries();
 	}
 
 	@FXML
@@ -100,5 +479,71 @@ public class CalendarController {
 		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
 		window.setScene(tableViewScene);
 		window.show();
+	}
+	public void editCalendar(ActionEvent ev)throws IOException{//na to valoume ston main controller sto koumpi submit
+		/*assert Monday0 != null : "fx:id=\"Monday0\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday3 != null : "fx:id=\"Monday3\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday6 != null : "fx:id=\"Monday6\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday9 != null : "fx:id=\"Monday9\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday12 != null : "fx:id=\"Monday12\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday15 != null : "fx:id=\"Monday15\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday18 != null : "fx:id=\"Monday18\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Monday21 != null : "fx:id=\"Monday21\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
+		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";*/
+		
+
+			
+		
+		
+		
+		
+		
 	}
 }

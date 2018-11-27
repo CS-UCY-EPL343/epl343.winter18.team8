@@ -1,6 +1,12 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -118,6 +124,8 @@ public class MainController {
 	@FXML
 	private TextArea txt48;
 	@FXML
+	private TextArea txt49;
+	@FXML
 	private RadioButton anes1;
 	@FXML
 	private RadioButton anes2;
@@ -128,24 +136,82 @@ public class MainController {
 	@FXML
 	private RadioButton female;
 	@FXML
-	private DatePicker date1;
+	private DatePicker doS;
 	@FXML
-	private DatePicker date2;
+	private DatePicker doB;
 	@FXML
 	private Button submitSurgery;
 	@FXML
 	private Button backToCalendar;
-
+	
 	@FXML
-	private void loadCalendar(ActionEvent ev) throws IOException {
+	protected void loadCalendar(ActionEvent ev) throws IOException {
 		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 		Scene tableViewScene = new Scene(tableviewParent, 1080, 600);
 		tableViewScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
 		window.setScene(tableViewScene);
 		window.show();
+		
 	}
-
+	public void viewSurgery(ActionEvent ev){
+		txt1.setText("");
+		txt2.setText("");
+		txt3.setText("");
+		txt4.setText("");
+		txt5.setText("");
+		txt6.setText("");
+		txt7.setText("");
+		txt8.setText("");
+		txt9.setText("");
+		txt10.setText("");
+		txt11.setText("");
+		txt12.setText("");
+		txt13.setText("");
+		txt14.setText("");
+		txt15.setText("");
+		txt16.setText("");
+		txt17.setText("");
+		txt18.setText("");
+		txt19.setText("");
+		txt20.setText("");
+		txt21.setText("");
+		txt22.setText("");
+		txt23.setText("");
+		txt24.setText("");
+		txt25.setText("");
+		txt26.setText("");
+		txt27.setText("");
+		txt28.setText("");
+		txt29.setText("");
+		txt30.setText("");
+		txt31.setText("");
+		txt32.setText("");
+		txt33.setText("");
+		txt34.setText("");
+		txt34.setText("");
+		txt35.setText("");
+		txt36.setText("");
+		txt37.setText("");
+		txt38.setText("");
+		txt39.setText("");
+		txt40.setText("");
+		txt41.setText("");
+		txt42.setText("");
+		txt43.setText("");
+		txt44.setText("");
+		txt45.setText("");
+		txt46.setText("");
+		txt47.setText("");
+		txt48.setText("");
+		male.setSelected(false);
+		female.setSelected(false);
+		anes1.setSelected(false);
+		anes2.setSelected(false);
+		anes3.setSelected(false);
+		doS.setValue(null);
+		doB.setValue(null);
+	}
 	public void resetText(ActionEvent ev) {
 		txt1.setText("");
 		txt2.setText("");
@@ -201,8 +267,8 @@ public class MainController {
 		anes1.setSelected(false);
 		anes2.setSelected(false);
 		anes3.setSelected(false);
-		date1.setValue(null);
-		date2.setValue(null);
+		doS.setValue(null);
+		doB.setValue(null);
 	}
 
 	public boolean isFill(){
@@ -240,8 +306,8 @@ public class MainController {
 			   !(this.txt48.getText().equals("")) &&
 			   ((this.anes1.isSelected()) || this.anes2.isSelected() || this.anes3.isSelected()) &&
 			   (this.male.isSelected() || this.female.isSelected()) &&
-			   !(this.date1.getValue()==null) &&
-			   !(this.date2.getValue()==null);
+			   !(this.doS.getValue()==null) &&
+			   !(this.doB.getValue()==null);
 	}
 
 
@@ -264,10 +330,74 @@ public class MainController {
 			Scene scene = new Scene(layout);
 			window.setScene(scene);
 			window.showAndWait();
+			
+			
 		}
 		else {
+		LocalDate ld = doS.getValue();
+		Instant c1 = Instant.from(ld.atStartOfDay(ZoneId.systemDefault()));
+		Date date = Date.from(c1);
+		System.out.println(date.toString());
+		LocalDate ld2 = doB.getValue();
+		Instant c2 = Instant.from(ld2.atStartOfDay(ZoneId.systemDefault()));
+		Date doB = Date.from(c2);
+		System.out.println(doB.toString());
+		String[] detail = new String[49];
+		detail[0] = txt1.getText().toString();
+		detail[1] = txt2.getText().toString();
+		detail[2] = txt3.getText().toString();
+		detail[3] = txt4.getText().toString();
+		detail[4] = txt5.getText().toString();
+		detail[5] = txt6.getText().toString();
+		detail[6] = txt7.getText().toString();
+		detail[7] = txt8.getText().toString();
+		detail[8] = txt9.getText().toString();
+		detail[9] = txt10.getText().toString();
+		detail[10] = txt11.getText().toString();
+		detail[11] = txt12.getText().toString();
+		detail[12] = txt13.getText().toString();
+		detail[13] = txt14.getText().toString();
+		detail[14] = txt15.getText().toString();
+		detail[15] = txt16.getText().toString();
+		detail[16] = txt17.getText().toString();
+		detail[17] = txt18.getText().toString();
+		detail[18] = txt19.getText().toString();
+		detail[19] = txt20.getText().toString();
+		detail[20] = txt21.getText().toString();
+		detail[21] = txt22.getText().toString();
+		detail[22] = txt23.getText().toString();
+		detail[23] = txt24.getText().toString();
+		detail[24] = txt25.getText().toString();
+		detail[25] = txt26.getText().toString();
+		detail[26] = txt27.getText().toString();
+		detail[27] = txt28.getText().toString();
+		detail[28] = txt29.getText().toString();
+		detail[29] = txt30.getText().toString();
+		detail[30] = txt31.getText().toString();
+		detail[31] = txt32.getText().toString();
+		detail[32] = txt33.getText().toString();
+		detail[33] = txt34.getText().toString();
+		detail[34] = txt35.getText().toString();
+		detail[35] = txt36.getText().toString();
+		detail[36] = txt37.getText().toString();
+		detail[37] = txt38.getText().toString();
+		detail[38] = txt39.getText().toString();
+		detail[39] = txt40.getText().toString();
+		detail[40] = txt41.getText().toString();
+		detail[41] = txt42.getText().toString();
+		detail[42] = txt43.getText().toString();
+		detail[43] = txt44.getText().toString();
+		detail[44] = txt45.getText().toString();
+		detail[45] = txt46.getText().toString();
+		detail[46] = txt47.getText().toString();
+		detail[47] = txt48.getText().toString();
+		detail[48] = txt49.getText().toString();
+		boolean [] b = { anes1.isSelected(),anes2.isSelected(),anes3.isSelected(),male.isSelected(),female.isSelected()};
+		long milis=Integer.parseInt(detail[31])*1000L*60L+Integer.parseInt(detail[48])*1000L+date.getTime();
+		date=new Date(milis);
+		Surgery s = new Surgery(detail,date,doB,b);
+		CalendarController.addToSurgeriesArray(s);
 		Stage window = new Stage();
-
 		window.initModality(Modality.APPLICATION_MODAL);
 		window.setTitle("Surgery Form confirm");
 		window.setMinWidth(250);
@@ -281,8 +411,8 @@ public class MainController {
 		Scene scene = new Scene(layout);
 		window.setScene(scene);
 		window.showAndWait();
+		
 		}
-
 	}
 
 }
