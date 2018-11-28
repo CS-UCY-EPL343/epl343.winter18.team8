@@ -8,13 +8,13 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minWidth="904.0" prefHeight="585.0001220703125" prefWidth="1046.0000999999975" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CalendarController">
+<AnchorPane minWidth="904.0" prefHeight="585.0001220703125" prefWidth="1046.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.CalendarController">
   <!-- TODO Add Nodes -->
   <children>
-    <Pane layoutX="-25.0" layoutY="-14.0" maxHeight="602.0" maxWidth="1064.0" minHeight="602.0" minWidth="1064.0" prefHeight="602.0" prefWidth="1064.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="-25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="-14.0">
+    <Pane maxHeight="602.0" maxWidth="1064.0" minHeight="602.0" minWidth="1064.0" prefHeight="602.0" prefWidth="1064.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="-25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="-14.0">
       <children>
         <Button layoutX="62.0" layoutY="546.0" mnemonicParsing="false" onAction="#loadSurgeryForm" prefHeight="32.01953125" prefWidth="92.0000084472631" text="Add Surgery" />
-        <Button layoutX="242.0" layoutY="546.0" mnemonicParsing="false" prefHeight="32.019529614262865" prefWidth="104.0" text="Delete Surgery" />
+        <Button layoutX="309.0" layoutY="561.0" mnemonicParsing="false" onAction="#DeleteSurgery" prefHeight="32.019529614262865" prefWidth="104.0" text="Delete Surgery" />
         <Button layoutX="26.0" layoutY="16.0" mnemonicParsing="false" onAction="#logOut" prefHeight="33.0" prefWidth="82.0" text="Log Out" />
         <TableView id="Table" fx:id="Table1" layoutX="60.0" layoutY="76.0" prefHeight="465.0" prefWidth="960.0">
           <columns>
@@ -128,11 +128,11 @@
             </HBox>
           </children>
         </VBox>
-            <Text fx:id="date1" layoutX="413.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="142.13671875" />
-            <Text fx:id="date2" layoutX="628.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="142.13671875" />
-            <Button layoutX="628.0" layoutY="562.0" mnemonicParsing="false" onAction="#FindSurgery" prefHeight="33.0" prefWidth="104.0" text="Find Surgery" />
-            <Label layoutX="471.0" layoutY="546.0" prefHeight="17.0" prefWidth="104.0" text="Surgery ID :" />
-            <TextField fx:id="txt50" layoutX="440.0" layoutY="566.0" />
+        <Text fx:id="date1" layoutX="413.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="142.13671875" />
+        <Text fx:id="date2" layoutX="628.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="142.13671875" />
+        <Button layoutX="628.0" layoutY="562.0" mnemonicParsing="false" onAction="#FindSurgery" prefHeight="33.0" prefWidth="104.0" text="Find Surgery" />
+        <Label layoutX="471.0" layoutY="546.0" prefHeight="17.0" prefWidth="104.0" text="Surgery ID :" />
+        <TextField fx:id="txt50" layoutX="440.0" layoutY="566.0" />
       </children>
     </Pane>
     <Button fx:id="PreviousWeek" layoutX="126.0" layoutY="17.0" mnemonicParsing="false" onAction="#PreviousWeekB" prefHeight="33.0" prefWidth="115.09765625" text="Previous Week" />

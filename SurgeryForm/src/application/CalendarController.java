@@ -143,11 +143,19 @@ public class CalendarController{
 	@FXML
 	protected TextField Sunday21;
 
+	static int index=0;
+	public void DeleteSurgery(ActionEvent ev) throws IOException{
+		String Search = txt50.getText().toString();
+		for (int i=0;i<surgeries.size();i++){
+			if (surgeries.get(i).getName().equals(Search))
+				surgeries.remove(i);
+		}
+		AddSurgeries();
+	}
 	public static ArrayList <Surgery> surgeries = new ArrayList<Surgery>();
 	long date_in_milis = (new Date()).getTime();
 	long date_in_milis_2 = (new Date()).getTime();
-	
-	
+
 	public static void addToSurgeriesArray(Surgery s) {
 		surgeries.add(s);
 	}
@@ -420,15 +428,12 @@ public class CalendarController{
 			}
 			date_in_milis = date_in_milis - 1000L * 24L * 60L * 60L;
 			date = new Date(date_in_milis_2);
-			System.out.println(date.toString());
 		}
 		date_in_milis= date_in_milis - (date_in_milis%(1000L*24L*60L*60L)+2L*60L*60L*1000L);
 		StringTokenizer st = new StringTokenizer(date.toString(), " ");
-		System.out.println(date.toString());
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
 		date_in_milis_2 = date_in_milis + 7L * 1000L * 24L * 60L * 60L-1L;
 		date = new Date(date_in_milis_2);
-		System.out.println(date.toString());
 		StringTokenizer st2 = new StringTokenizer(date.toString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
 		AddSurgeries();
@@ -480,5 +485,7 @@ public class CalendarController{
 		window.setScene(tableViewScene);
 		window.show();
 	}
-
+	public void loadForm(){
+		
+	}
 }
