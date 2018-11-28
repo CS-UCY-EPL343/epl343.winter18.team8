@@ -419,44 +419,30 @@ public class CalendarController{
 				break;
 			}
 			date_in_milis = date_in_milis - 1000L * 24L * 60L * 60L;
+			date = new Date(date_in_milis_2);
+			System.out.println(date.toString());
 		}
 		date_in_milis= date_in_milis - (date_in_milis%(1000L*24L*60L*60L)+2L*60L*60L*1000L);
 		StringTokenizer st = new StringTokenizer(date.toString(), " ");
+		System.out.println(date.toString());
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
 		date_in_milis_2 = date_in_milis + 7L * 1000L * 24L * 60L * 60L-1L;
 		date = new Date(date_in_milis_2);
+		System.out.println(date.toString());
 		StringTokenizer st2 = new StringTokenizer(date.toString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
-		/*Date date1 = new Date(2018-1900,10,23,21,42);
-		String[] strn= new String[49];
-		strn[35]="Kot";
-		boolean b[] = {true,true,false,true,true};
-		
-		Surgery surgery = new Surgery(strn,date1,date1,b);
-		Date date2 = new Date(2018-1900 , 10 , 19 , 23 , 15);
-		Surgery surgery2 = new Surgery(strn,date1,date2,b);
-		Surgery surgery3 = new Surgery(strn,date1,date2,b);
-		Surgery surgery4 = new Surgery(strn,new Date(2018-1900 , 10 , 27 , 23, 15),date2,b);
-		Surgery surgery5 = new Surgery(strn,new Date(2019-1900 , 1 , 1 , 3, 0),date1,b);//eshei problem me +1 -1 ores, dld otan allazei i wra se sigkegkrimenes epoxes
-		Surgery surgery6 = new Surgery(strn,new Date(2018-1900 , 9 , 25 , 0, 1),date2,b);
-		surgeries.add(surgery);
-		surgeries.add(surgery2);
-		surgeries.add(surgery3);
-		surgeries.add(surgery4);
-		surgeries.add(surgery5);
-		surgeries.add(surgery6);*/
 		AddSurgeries();
 	}
 	@SuppressWarnings("deprecation")
 	@FXML
 	public void PreviousWeekB(ActionEvent event) {
 		date_in_milis = date_in_milis - 7L * 1000L * 24L * 60L * 60L;
-		Date date = new Date(date_in_milis);
+		Date date = new Date(date_in_milis+2L*1000L*60L*60L);
 		String str = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
 		StringTokenizer st = new StringTokenizer(date.toGMTString(), " ");
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
-		date_in_milis_2 = date_in_milis + 6L * 1000L * 24L * 60L * 60L;
-		date = new Date(date_in_milis_2);
+		date_in_milis_2 = date_in_milis_2 -7L * 1000L * 24L * 60L * 60L;
+		date = new Date(date_in_milis_2-2L*1000L*60L*60L);
 		StringTokenizer st2 = new StringTokenizer(date.toGMTString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
 		AddSurgeries();
@@ -464,12 +450,12 @@ public class CalendarController{
 	@FXML
 	public void NextWeekB(ActionEvent event) {
 		date_in_milis = date_in_milis + 7L * 1000L * 24L * 60L * 60L;
-		Date date = new Date(date_in_milis);
+		Date date = new Date(date_in_milis+2L*1000L*60L*60L);
 		String str = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
 		StringTokenizer st = new StringTokenizer(date.toString(), " ");
 		date1.setText(st.nextToken() + " " + st.nextToken() + " " + st.nextToken());
-		date_in_milis_2 = date_in_milis + 6L * 1000L * 24L * 60L * 60L;
-		date = new Date(date_in_milis_2);
+		date_in_milis_2 = date_in_milis_2 + 7L * 1000L * 24L * 60L * 60L;
+		date = new Date(date_in_milis_2-2L*1000L*60L*60L);
 		StringTokenizer st2 = new StringTokenizer(date.toString(), " ");
 		date2.setText(st2.nextToken() + " " + st2.nextToken() + " " + st2.nextToken());
 		AddSurgeries();
@@ -494,70 +480,5 @@ public class CalendarController{
 		window.setScene(tableViewScene);
 		window.show();
 	}
-	public void editCalendar(ActionEvent ev)throws IOException{//na to valoume ston main controller sto koumpi submit
-		/*assert Monday0 != null : "fx:id=\"Monday0\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday3 != null : "fx:id=\"Monday3\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday6 != null : "fx:id=\"Monday6\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday9 != null : "fx:id=\"Monday9\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday12 != null : "fx:id=\"Monday12\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday15 != null : "fx:id=\"Monday15\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday18 != null : "fx:id=\"Monday18\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Monday21 != null : "fx:id=\"Monday21\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert Tuesday0 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";
-		assert date2 != null : "fx:id=\"date2\" was not injected: check your FXML file 'Main.fxml'.";*/
-		
 
-			
-		
-		
-		
-		
-		
-	}
 }

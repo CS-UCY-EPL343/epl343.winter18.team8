@@ -396,7 +396,7 @@ public class MainController {
 		detail[47] = txt48.getText().toString();
 		detail[48] = txt49.getText().toString();
 		boolean [] b = { anes1.isSelected(),anes2.isSelected(),anes3.isSelected(),male.isSelected(),female.isSelected()};
-		long milis=Integer.parseInt(detail[31])*1000L*60L+Integer.parseInt(detail[48])*1000L+date.getTime();
+		long milis=Integer.parseInt(detail[31])*1000L*60L*60L+Integer.parseInt(detail[48])*1000L*60L+date.getTime();
 		date=new Date(milis);
 		Surgery s = new Surgery(detail,date,doB,b,CalendarController.surgeries.size()+1);
 		CalendarController.addToSurgeriesArray(s);
