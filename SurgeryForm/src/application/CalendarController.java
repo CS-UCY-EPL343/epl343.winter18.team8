@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -23,7 +24,8 @@ public class CalendarController{
 
 	@FXML
 	private URL location;
-
+	@FXML
+	private TextField txt50;
 	@FXML
 	protected Text date1;
 	@FXML
@@ -156,7 +158,19 @@ public class CalendarController{
 	public void setSurgeries(ArrayList<Surgery> surgeries) {
 		this.surgeries = surgeries;
 	}
-
+	public void FindSurgery(ActionEvent ev) throws IOException {
+		String Search = txt50.getText().toString();
+		StringTokenizer S = new StringTokenizer(Search,"Surgery ");
+		String NextToken = S.nextToken();
+		Surgery d = surgeries.get(Integer.parseInt(NextToken)-1);
+		MainController.surgery = d;
+		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/SurgeryForm.fxml"));
+		Scene tableViewScene = new Scene(tableviewParent, 600, 600);
+		tableViewScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
+		window.setScene(tableViewScene);
+		window.show();
+	}
 	@FXML
 	void everclear(){
 		Monday0.setText("");

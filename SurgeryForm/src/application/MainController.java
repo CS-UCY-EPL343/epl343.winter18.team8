@@ -143,7 +143,69 @@ public class MainController {
 	private Button submitSurgery;
 	@FXML
 	private Button backToCalendar;
+	static Surgery surgery;
 	
+	public void initialize() {
+		if (surgery != null) {
+		txt1.setText(surgery.getString(0));
+		txt2.setText(surgery.getString(1));
+		txt3.setText(surgery.getString(2));
+		txt4.setText(surgery.getString(3));
+		txt5.setText(surgery.getString(4));
+		txt6.setText(surgery.getString(5));
+		txt7.setText(surgery.getString(6));
+		txt8.setText(surgery.getString(7));
+		txt9.setText(surgery.getString(8));
+		txt10.setText(surgery.getString(9));
+		txt11.setText(surgery.getString(10));
+		txt12.setText(surgery.getString(11));
+		txt13.setText(surgery.getString(12));
+		txt14.setText(surgery.getString(13));
+		txt15.setText(surgery.getString(14));
+		txt16.setText(surgery.getString(15));
+		txt17.setText(surgery.getString(16));
+		txt18.setText(surgery.getString(17));
+		txt19.setText(surgery.getString(18));
+		txt20.setText(surgery.getString(19));
+		txt21.setText(surgery.getString(20));
+		txt22.setText(surgery.getString(21));
+		txt23.setText(surgery.getString(22));
+		txt24.setText(surgery.getString(23));
+		txt25.setText(surgery.getString(24));
+		txt26.setText(surgery.getString(25));
+		txt27.setText(surgery.getString(26));
+		txt28.setText(surgery.getString(27));
+		txt29.setText(surgery.getString(28));
+		txt30.setText(surgery.getString(29));
+		txt31.setText(surgery.getString(30));
+		txt32.setText(surgery.getString(31));
+		txt33.setText(surgery.getString(32));
+		txt34.setText(surgery.getString(33));
+		txt35.setText(surgery.getString(34));
+		txt36.setText(surgery.getString(35));
+		txt37.setText(surgery.getString(36));
+		txt38.setText(surgery.getString(37));
+		txt39.setText(surgery.getString(38));
+		txt40.setText(surgery.getString(39));
+		txt41.setText(surgery.getString(40));
+		txt42.setText(surgery.getString(41));
+		txt43.setText(surgery.getString(42));
+		txt44.setText(surgery.getString(43));
+		txt45.setText(surgery.getString(44));
+		txt46.setText(surgery.getString(45));
+		txt47.setText(surgery.getString(46));
+		txt48.setText(surgery.getString(47));
+		txt49.setText(surgery.getString(48));
+		male.setSelected(surgery.getB(3));
+		female.setSelected(surgery.getB(4));
+		anes1.setSelected(surgery.getB(0));
+		anes2.setSelected(surgery.getB(1));
+		anes3.setSelected(surgery.getB(2));
+		doS.setValue(surgery.getDateLocal(surgery.getDateOfSurgery()));
+		doB.setValue(surgery.getDateLocal(surgery.getDate2()));
+		}
+		surgery=null;
+	}
 	@FXML
 	protected void loadCalendar(ActionEvent ev) throws IOException {
 		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
@@ -154,64 +216,8 @@ public class MainController {
 		window.show();
 		
 	}
-	public void viewSurgery(ActionEvent ev){
-		txt1.setText("");
-		txt2.setText("");
-		txt3.setText("");
-		txt4.setText("");
-		txt5.setText("");
-		txt6.setText("");
-		txt7.setText("");
-		txt8.setText("");
-		txt9.setText("");
-		txt10.setText("");
-		txt11.setText("");
-		txt12.setText("");
-		txt13.setText("");
-		txt14.setText("");
-		txt15.setText("");
-		txt16.setText("");
-		txt17.setText("");
-		txt18.setText("");
-		txt19.setText("");
-		txt20.setText("");
-		txt21.setText("");
-		txt22.setText("");
-		txt23.setText("");
-		txt24.setText("");
-		txt25.setText("");
-		txt26.setText("");
-		txt27.setText("");
-		txt28.setText("");
-		txt29.setText("");
-		txt30.setText("");
-		txt31.setText("");
-		txt32.setText("");
-		txt33.setText("");
-		txt34.setText("");
-		txt34.setText("");
-		txt35.setText("");
-		txt36.setText("");
-		txt37.setText("");
-		txt38.setText("");
-		txt39.setText("");
-		txt40.setText("");
-		txt41.setText("");
-		txt42.setText("");
-		txt43.setText("");
-		txt44.setText("");
-		txt45.setText("");
-		txt46.setText("");
-		txt47.setText("");
-		txt48.setText("");
-		male.setSelected(false);
-		female.setSelected(false);
-		anes1.setSelected(false);
-		anes2.setSelected(false);
-		anes3.setSelected(false);
-		doS.setValue(null);
-		doB.setValue(null);
-	}
+	
+	
 	public void resetText(ActionEvent ev) {
 		txt1.setText("");
 		txt2.setText("");
@@ -246,7 +252,6 @@ public class MainController {
 		txt31.setText("");
 		txt32.setText("");
 		txt33.setText("");
-		txt34.setText("");
 		txt34.setText("");
 		txt35.setText("");
 		txt36.setText("");
@@ -337,11 +342,9 @@ public class MainController {
 		LocalDate ld = doS.getValue();
 		Instant c1 = Instant.from(ld.atStartOfDay(ZoneId.systemDefault()));
 		Date date = Date.from(c1);
-		System.out.println(date.toString());
 		LocalDate ld2 = doB.getValue();
 		Instant c2 = Instant.from(ld2.atStartOfDay(ZoneId.systemDefault()));
 		Date doB = Date.from(c2);
-		System.out.println(doB.toString());
 		String[] detail = new String[49];
 		detail[0] = txt1.getText().toString();
 		detail[1] = txt2.getText().toString();
@@ -395,7 +398,7 @@ public class MainController {
 		boolean [] b = { anes1.isSelected(),anes2.isSelected(),anes3.isSelected(),male.isSelected(),female.isSelected()};
 		long milis=Integer.parseInt(detail[31])*1000L*60L+Integer.parseInt(detail[48])*1000L+date.getTime();
 		date=new Date(milis);
-		Surgery s = new Surgery(detail,date,doB,b);
+		Surgery s = new Surgery(detail,date,doB,b,CalendarController.surgeries.size()+1);
 		CalendarController.addToSurgeriesArray(s);
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);

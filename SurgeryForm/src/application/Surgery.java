@@ -1,5 +1,7 @@
 
 package application;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 public class Surgery {
 	
@@ -11,18 +13,17 @@ public class Surgery {
 	
 	private String[] detail=new String [detsize];
 	
-	public Surgery(String[] detail,Date dateOfSurgery,Date date2,boolean[] b){
+	public Surgery(String[] detail,Date dateOfSurgery,Date date2,boolean[] b,int size){
 		int i=0;
 		for (i=0;i<detsize;i++){
 			this.detail[i]=detail[i];
 		}
 		this.dateOfSurgery=dateOfSurgery;
 		this.date2=date2;
-		this.name=detail[35];
+		this.name= "Surgery " + size;
 		for (i=0;i<5;i++){
 			this.b[i]=b[i];
 		}
-				
 	}
 	
 	public Date getDateOfSurgery() {
@@ -52,10 +53,12 @@ public class Surgery {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean[] getB() {
-		return b;
+	public boolean getB(int i) {
+		return b[i];
 	}
-
+	public LocalDate getDateLocal(Date date) {
+		return dateOfSurgery.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+	}
 	public void setB(boolean[] b) {
 		this.b = b;
 	}
