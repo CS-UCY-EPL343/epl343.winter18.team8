@@ -146,11 +146,16 @@ public class CalendarController{
 	static int index=0;
 	public void DeleteSurgery(ActionEvent ev) throws IOException{
 		String Search = txt50.getText().toString();
+		boolean se=true;
 		for (int i=0;i<surgeries.size();i++){
-			if (surgeries.get(i).getName().equals(Search))
+			if (surgeries.get(i).getName().equals(Search)){
 				surgeries.remove(i);
+				se=false;
+			}
 		}
+		if (se){
 		AddSurgeries();
+		}
 	}
 	public static ArrayList <Surgery> surgeries = new ArrayList<Surgery>();
 	long date_in_milis = (new Date()).getTime();
@@ -173,6 +178,7 @@ public class CalendarController{
 			if (surgeries.get(i).getName().equals(Search))
 				d = surgeries.get(i);
 		}
+		if (d!=null){
 		MainController.surgery = d;
 		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/SurgeryForm.fxml"));
 		Scene tableViewScene = new Scene(tableviewParent, 600, 600);
@@ -180,6 +186,7 @@ public class CalendarController{
 		Stage window = (Stage) ((Node) ev.getSource()).getScene().getWindow();
 		window.setScene(tableViewScene);
 		window.show();
+		}
 	}
 	@FXML
 	void everclear(){
