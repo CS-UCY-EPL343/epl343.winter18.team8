@@ -168,9 +168,11 @@ public class CalendarController{
 	}
 	public void FindSurgery(ActionEvent ev) throws IOException {
 		String Search = txt50.getText().toString();
-		StringTokenizer S = new StringTokenizer(Search,"Surgery ");
-		String NextToken = S.nextToken();
-		Surgery d = surgeries.get(Integer.parseInt(NextToken)-1);
+		Surgery d = null;
+		for (int i=0;i<surgeries.size();i++){
+			if (surgeries.get(i).getName().equals(Search))
+				d = surgeries.get(i);
+		}
 		MainController.surgery = d;
 		Parent tableviewParent = FXMLLoader.load(getClass().getResource("/application/SurgeryForm.fxml"));
 		Scene tableViewScene = new Scene(tableviewParent, 600, 600);
